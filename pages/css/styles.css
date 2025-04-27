@@ -1,6 +1,7 @@
 /*global - desktop*/
 html {
-    background: #131313;
+    background: #FFFFFF;
+        
 }
 
 body {
@@ -68,21 +69,34 @@ header {
     padding: 0;
     transform: scaleX(-1);
 }
-/*header img:last-child {
-    transform: scaleX(-1);
-}*/
 
 .menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0em 0.188em 0em 0.188em;
-    
+    border-bottom-width: 5px;
+    border-bottom-color: white;
+    border-bottom-style: solid;
+    background: FireBrick;
 }
+
+.menu nav ul li a {
+    justify-content: space-between;;
+}
+
 
 /* Slideshow */
 .slideshow-container {
     position: relative;
+    max-width: 100%; /* <<< S'adapte à l'écran */
+    width: 600px;    /* <<< Taille initiale souhaitée */
+    height: auto;
+    margin: 0 auto;
+    border-top: 3px solid red;
+    border-bottom: 3px solid red;
+    overflow: hidden; /* <<< Très important pour couper tout dépassement */
+    
 }
 
 .slide {
@@ -92,6 +106,14 @@ header {
 img {
     width: 100%;
     height: auto;
+}
+
+.slide img {
+   width: 100%; /* <<< Prend toute la largeur de son parent */
+    max-width: 600px; /* <<< Ne dépasse pas 600px */
+    height: auto; /* <<< Respecte le ratio de l'image */
+    display: block;
+    margin: 0 auto;
 }
 
 .alt-text {
@@ -120,35 +142,49 @@ img {
 }
 
 .indicateur.actif {
-    background: black;
+    background: red;
     border-color: white;
 }
-/* Presentation des artistes à ne surtout pas manquer... */
+/* Presentation des emissions à ne surtout pas manquer... */
 .presentation {
     background: #fff;
     padding-top: 0.625em;
     padding-bottom: 0.625em;
     color: #131313;
+    border-bottom-width: 1px;
+    border-bottom-color: red;
+    border-bottom-style: solid;
 }
 
-.noms-artistes {
+.presentation h1 {
+    text-align: center;
+    color: red;
+}
+
+.noms-emissions {
     text-transform: uppercase;
     font-weight: 600;
+    margin-bottom: 17px;
+    padding-bottom: 5px;
 }
 
-.rubrique-artistes {
+.rubrique-emissions {
     display: flex;
     text-align: center;
     justify-content: center;
 }
 
-.rubrique-artistes div {
-    width: 100%;
-    overflow: hidden;
+.rubrique-emissions div {
+    width: 150px; /* un peu plus large que l'image */
+    margin: 0 10px;
 }
 
-.rubrique-artistes img {
-    max-width: 100%;
+.rubrique-emissions img {
+    width: 133px;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
 }
 
 
@@ -156,26 +192,52 @@ img {
 .zone-bas {
     padding-top: 1.25em;
     padding-bottom: 0.625em;
-    background: #303030;
+    color: black;
+    border-bottom-width: 1px;
+    border-bottom-color: red;
+    border-bottom-style: solid;
 }
 
 .actus {
     margin-bottom: 2.5em;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    text-align: justify;
-    line-height: 1.375em;
+    align-items: stretch;
+      
 }
 
 .actus div {
     width: 23.5%;
+    padding: 5px;
+    
+}
+
+.breve {
+    height: 100%;
+    display: flex; /* <<< pour que l'intérieur s'adapte */
+    flex-direction: column;
+    /*justify-content: space-between;*/
+    justify-content: flex-start;
+    text-align: justify;
+    line-height: 1.375em;
+    background: FireBrick;
+    color: white;
+    margin-bottom: 3px; 
+    border: 1px solid black;
+    border-radius: 20px 5px 40px 0;
+    height: 100%; 
+    min-height: 220px; /* <<< valeur à ajuster selon les besoin */
+}
+
+.breve h3 {
+    margin-bottom: 10px; /* <<< ajuste ici l'espace entre h3 et p */
 }
 
 .supports {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    background-color: white;
 }
 
 .map {
@@ -183,8 +245,18 @@ img {
     width: 30%;
 }
 
+.map h2 {
+    text-align: center;
+    color: red;
+}
+
 .youtube {
     width: 40%;
+}
+
+.youtube h2 {
+    text-align: center;
+    color: red;
 }
 
 iframe {
@@ -200,6 +272,7 @@ footer section {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: #303030;
 }
 
 .partage-reseaux {
@@ -270,6 +343,7 @@ footer section {
     position: fixed;
     bottom: 1.875em;
     right: 1.875em;
+    color: black;
 }
 
 /* Styles pour la fenêtre contextuelle de cookies */
@@ -334,7 +408,7 @@ footer section {
     body {
         padding: 0.313em 0.625em;
     }
-
+    
     section {
         padding: 0 1.563em;
     }
@@ -354,12 +428,14 @@ footer section {
         padding-bottom: 2.188em;
     }
 
-    .rubrique-artistes {
+    .rubrique-emissions {
         flex-direction: column;
+        align-items: center;
+
     }
 
-    .rubrique-artistes img {
-        max-width: 85%;
+    .rubrique-emissionss img {
+        /*max-width: 85%;*/
     }
 
     .actus {
