@@ -12,7 +12,7 @@ Couleurs à utiliser :
 gris foncé : #131313
 gris clair : #303030
 blanc : #fff
-rouge: #f0000
+FireBrick et rouge: #f0000
 
 Description du zoning et des fonctionnalités de la page :
 
@@ -62,7 +62,7 @@ Light gray: #303030
 
 White: #fff
 
-Red: #f0000
+FireBrick and Red: #f0000
 
 Description of the zoning and page features:
 
